@@ -1,0 +1,58 @@
+<form novalidate #form="ngForm">
+    <input type="hidden" name="CustomerId"
+    [value]="service.formData.customerId"/>
+
+    <div class="form-goup">
+        <label>First Name</label>
+        <input class="form-control form-control-lg" placeholder="Enter First Name" 
+        name="firstName" #firstName="ngModel" [(ngModel)]="service.formData.firstName"
+        required [class.invalid]="firstName.invalid && firstName.touched" maxlength="50">
+    </div>
+
+    <div class="form-goup">
+        <label>Middle Name</label>
+        <input class="form-control form-control-lg" placeholder="Enter Middle Name" 
+        name="middleName" #middleName="ngModel" [(ngModel)]="service.formData.middleName" maxlength="50">
+    </div>
+
+    <div class="form-goup">
+        <label>Last Name</label>
+        <input class="form-control form-control-lg" placeholder="Enter Last Name" 
+        name="lastName" #lastName="ngModel" [(ngModel)]="service.formData.lastName"
+        required [class.invalid]="lastName.invalid && lastName.touched" maxlength="50">
+    </div>
+    
+    <div class="form-goup">
+        <label>Date of Birth</label>
+        <input type="password" class="form-control form-control-lg" placeholder="MM/DD/YYYY" 
+        name="dateOfBirth" #dateOfBirth="ngModel" [(ngModel)]="service.formData.dateOfBirth"
+        required [class.invalid]="dateOfBirth.invalid && lastName.touched" maxlength="10">
+    </div>
+
+    <div class="form-goup">
+        <label>Email Address</label>
+        <input class="form-control form-control-lg" placeholder="Enter Email Address" 
+        name="emailAddress" #emailAddress="ngModel" [(ngModel)]="service.formData.emailAddress"
+        required maxlength="100">
+    </div>
+    
+    <div class="form-goup">
+        <label>Address</label>
+        <input class="form-control form-control-lg" placeholder="Enter Address" 
+        name="address" #address="ngModel" [(ngModel)]="service.formData.address"
+        required maxlength="100">
+    </div>
+
+    <div class="form-goup">
+        <label>Phone Number</label>
+        <input class="form-control form-control-lg" placeholder="Enter Phone Number" 
+        name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="service.formData.phoneNumber"
+        required maxlength="10">
+    </div>
+
+    <div class="form-group py-3">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+
+    </div>
+
+    </form>
